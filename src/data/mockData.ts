@@ -399,7 +399,7 @@ export const UPCOMING_EVENTS: FitnessEvent[] = [
     date: 'Saturday, Nov 7, 2026',
     time: '06:30 AM – 09:00 AM SGT',
     location: 'Gardens by the Bay to East Coast Park',
-    instructor: 'Dr. Kimberly Reyes & Team NadiFit Pacer Club',
+    instructor: 'Dr. Kimberly Reyes & Team Shizen Pacer Club',
     fee: 'Free with RSVP',
     spotsLeft: 22,
     description: 'Guided progressive pace group runs with electrolyte hydration stations, recovery rolling, and form critique.',

@@ -28,7 +28,7 @@ export const BmcModal: React.FC<BmcModalProps> = ({ isOpen, onClose }) => {
             <span>BUSINESS MODEL CANVAS SPECIFICATION</span>
           </div>
           <h2 className="text-2xl font-black text-slate-900 tracking-tight">
-            NadiFit ASEAN: 9-Building-Block Blueprint
+            Shizen ASEAN: 9-Building-Block Blueprint
           </h2>
           <p className="text-xs sm:text-sm text-slate-600">
             Exact transcription and interactive breakdown of the Business Model Canvas submitted in the project artifact.

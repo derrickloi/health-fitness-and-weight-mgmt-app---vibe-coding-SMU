@@ -20,7 +20,7 @@ export interface HealthCheckResponse {
 export async function healthHandler(req: Request, res: Response): Promise<void> {
   const payload: HealthCheckResponse = {
     status: 'ok',
-    service: 'NadiFit ASEAN Serverless Backend',
+    service: 'Shizen ASEAN Serverless Backend',
     timestamp: new Date().toISOString(),
     uptimeSeconds: Math.floor(process.uptime ? process.uptime() : 0),
     environment: process.env.NODE_ENV || 'development',

@@ -105,7 +105,7 @@ export interface HealthFitnessWeightMgmtResponse {
 export async function fetchWgerExercises(): Promise<{ totalCount?: number; items: ExerciseItem[] }> {
   const headers: Record<string, string> = {
     'Accept': 'application/json',
-    'User-Agent': 'NadiFit-ASEAN-App/1.0'
+    'User-Agent': 'Shizen-ASEAN-App/1.0'
   };
 
   const wgerKey = process.env.WGER_API_KEY;

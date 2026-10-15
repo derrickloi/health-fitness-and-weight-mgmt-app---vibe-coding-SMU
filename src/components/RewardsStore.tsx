@@ -17,7 +17,7 @@ export const RewardsStore: React.FC<RewardsStoreProps> = ({ points, onRedeemRewa
   const [rsvpSuccess, setRsvpSuccess] = useState<string | null>(null);
   const [redeemedToast, setRedeemedToast] = useState<string | null>(null);
 
-  const referralCode = 'NADIFIT-SG2026';
+  const referralCode = 'SHIZEN-SG2026';
 
   const categories = ['All', 'Healthy F&B', 'Gym & Facilities', 'Sports Equipment', 'Health Screening'];
 
@@ -316,7 +316,7 @@ export const RewardsStore: React.FC<RewardsStoreProps> = ({ points, onRedeemRewa
               <input
                 type="text"
                 readOnly
-                value={`https://nadifit.app/join?ref=${referralCode}`}
+                value={`https://shizen.app/join?ref=${referralCode}`}
                 className="flex-1 px-3.5 py-2.5 text-xs font-mono rounded-xl border border-slate-300 bg-slate-50 text-slate-800"
               />
               <button

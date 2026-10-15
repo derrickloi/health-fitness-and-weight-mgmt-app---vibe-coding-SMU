@@ -121,12 +121,12 @@ export const WeightPlanBuilder: React.FC<WeightPlanBuilderProps> = ({
 
   const handleExportCalendar = () => {
     // Generate .ics calendar format
-    const icsContent = `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//NadiFit ASEAN//Weight Management//EN\nSUMMARY:NadiFit ${focusArea} 12-Week Program\nDESCRIPTION:Personalized ASEAN Health & Weight Management Plan. Target Weight: ${targetWeight}kg.\nEND:VCALENDAR`;
+    const icsContent = `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Shizen ASEAN//Weight Management//EN\nSUMMARY:Shizen ${focusArea} 12-Week Program\nDESCRIPTION:Personalized ASEAN Health & Weight Management Plan. Target Weight: ${targetWeight}kg.\nEND:VCALENDAR`;
     const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.setAttribute('download', `NadiFit_${focusArea.replace(/\s+/g, '_')}_Plan.ics`);
+    link.setAttribute('download', `Shizen_${focusArea.replace(/\s+/g, '_')}_Plan.ics`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

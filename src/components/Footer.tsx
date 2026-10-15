@@ -15,9 +15,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBmcModal, onNavigate }) =>
           <div className="space-y-3">
             <div className="flex items-center gap-2">
               <span className="w-6 h-6 rounded-md bg-emerald-600 text-white font-bold flex items-center justify-center text-xs">
-                N
+                S
               </span>
-              <span className="text-base font-bold text-slate-900">NadiFit ASEAN</span>
+              <span className="text-base font-bold text-slate-900">Shizen ASEAN</span>
             </div>
             <p className="text-slate-500 leading-relaxed text-xs">
               Personalized health, fitness, and weight management built for Southeast Asian cuisines, clinical metabolic health, and smart wearable ecosystems.
@@ -97,7 +97,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBmcModal, onNavigate }) =>
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-400 text-[11px]">
-          <span>© 2026 NadiFit ASEAN. All rights reserved.</span>
+          <span>© 2026 Shizen ASEAN. All rights reserved.</span>
           <div className="flex items-center gap-4">
             <span className="hover:text-slate-600 cursor-pointer">Privacy Policy</span>
             <span aria-hidden="true">·</span>

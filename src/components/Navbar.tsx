@@ -52,11 +52,11 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="flex items-center gap-2 text-left group cursor-pointer"
             >
               <span className="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center text-white font-bold text-lg shadow-sm">
-                N
+                S
               </span>
               <div className="flex flex-col">
                 <span className="text-lg font-bold tracking-tight text-slate-900 group-hover:text-emerald-700 transition-colors whitespace-nowrap">
-                  NadiFit ASEAN
+                  Shizen ASEAN
                 </span>
                 <span className="text-[10px] text-slate-500 font-medium tracking-wide">
                   Health & Weight Management

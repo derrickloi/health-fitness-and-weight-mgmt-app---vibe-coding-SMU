@@ -111,7 +111,7 @@ export default function App() {
       {!showHero && (
         <div className="bg-slate-900 text-white py-2 px-4 sm:px-8 border-b border-slate-800 flex items-center justify-between text-xs">
           <span className="text-slate-300">
-            NadiFit ASEAN · <strong className="text-white">Active Tab: {tabs.find(t => t.id === activeTab)?.label}</strong>
+            Shizen ASEAN · <strong className="text-white">Active Tab: {tabs.find(t => t.id === activeTab)?.label}</strong>
           </span>
           <button
             type="button"

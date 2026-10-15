@@ -3,7 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 import { healthHandler } from './api/health.ts';
-import { healthFitnessWeightMgmtHandler } from './api/healthfitness_weightmgmt.ts';
+import { healthFitnessWeightMgmtHandler, pm25Handler } from './api/healthfitness_weightmgmt.ts';
 
 dotenv.config();
 
@@ -20,6 +20,7 @@ async function startServer() {
   // API Endpoints requested by user
   app.get('/api/health', healthHandler);
   app.get('/api/healthfitness_weightmgmt', healthFitnessWeightMgmtHandler);
+  app.get('/api/pm25', pm25Handler);
 
   if (!isProduction) {
     const { createServer } = await import('vite');

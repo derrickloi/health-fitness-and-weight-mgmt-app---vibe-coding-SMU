@@ -8,7 +8,8 @@ export interface HealthCheckResponse {
   environment: string;
   endpoints: {
     wger: string;
-    dataGovSg: string;
+    dataGovSgTwoHr: string;
+    dataGovSgPm25: string;
   };
 }
 
@@ -25,7 +26,8 @@ export async function healthHandler(req: Request, res: Response): Promise<void> 
     environment: process.env.NODE_ENV || 'development',
     endpoints: {
       wger: 'https://wger.de/api/v2/exerciseinfo/?language=2&limit=20',
-      dataGovSg: 'https://api-open.data.gov.sg/v2/real-time/api/two-hr-forecast'
+      dataGovSgTwoHr: 'https://api-open.data.gov.sg/v2/real-time/api/two-hr-forecast',
+      dataGovSgPm25: 'https://api-open.data.gov.sg/v2/real-time/api/pm25'
     }
   };
 

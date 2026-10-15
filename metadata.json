@@ -1,0 +1,6 @@
+{
+  "name": "NadiFit ASEAN",
+  "description": "ASEAN Health, Fitness & Weight Management platform featuring localized AI meal scanning, certified trainer matching, InBody sync, and community rewards.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

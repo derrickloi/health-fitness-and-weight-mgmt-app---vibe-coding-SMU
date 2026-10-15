@@ -28,16 +28,28 @@ export const Navbar: React.FC<NavbarProps> = ({
     { id: 'pricing', label: 'Pricing' }
   ];
 
+  const handleNavClick = (tabId: string) => {
+    setActiveTab(tabId);
+    setMobileMenuOpen(false);
+    setTimeout(() => {
+      const el = document.getElementById('workspace-view');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 50);
+  };
+
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200">
       {/* Strict 3-Zone Top Bar Contract */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-8 h-16">
+        <div className="flex items-center justify-between gap-6 h-16">
           {/* Zone 1: Single text element wordmark */}
           <div className="flex items-center gap-3 shrink-0">
             <button
-              onClick={() => setActiveTab('tracker')}
-              className="flex items-center gap-2 text-left group"
+              type="button"
+              onClick={() => handleNavClick('tracker')}
+              className="flex items-center gap-2 text-left group cursor-pointer"
             >
               <span className="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center text-white font-bold text-lg shadow-sm">
                 N
@@ -53,15 +65,16 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
           </div>
 
-          {/* Zone 2: 5-6 concise single-line text navigation links */}
-          <nav className="hidden lg:flex items-center gap-5 text-xs font-semibold text-slate-600">
-            {navItems.slice(0, 6).map((item) => (
+          {/* Zone 2: All 7 single-line navigation tabs */}
+          <nav className="hidden md:flex items-center gap-3.5 xl:gap-5 text-xs font-semibold text-slate-600">
+            {navItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => setActiveTab(item.id)}
-                className={`py-1 text-sm whitespace-nowrap shrink-0 transition-colors ${
+                type="button"
+                onClick={() => handleNavClick(item.id)}
+                className={`py-1 whitespace-nowrap shrink-0 transition-colors cursor-pointer ${
                   activeTab === item.id
-                    ? 'text-emerald-700 font-semibold border-b-2 border-emerald-600'
+                    ? 'text-emerald-700 font-bold border-b-2 border-emerald-600'
                     : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
@@ -147,11 +160,9 @@ export const Navbar: React.FC<NavbarProps> = ({
             {navItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => {
-                  setActiveTab(item.id);
-                  setMobileMenuOpen(false);
-                }}
-                className={`w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+                type="button"
+                onClick={() => handleNavClick(item.id)}
+                className={`w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium transition-colors cursor-pointer ${
                   activeTab === item.id
                     ? 'bg-emerald-50 text-emerald-800 font-semibold'
                     : 'text-slate-700 hover:bg-slate-50'

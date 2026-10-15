@@ -8,6 +8,7 @@ import { TrainerDirectory } from './components/TrainerDirectory';
 import { DeviceSyncHub } from './components/DeviceSyncHub';
 import { RewardsStore } from './components/RewardsStore';
 import { PricingTiers } from './components/PricingTiers';
+import { LiveExerciseWeatherHub } from './components/LiveExerciseWeatherHub';
 import { BmcModal } from './components/BmcModal';
 import { Footer } from './components/Footer';
 import { Trainer, RewardItem, WeightPlan } from './types';
@@ -82,6 +83,15 @@ export default function App() {
           <WeightPlanBuilder
             onPlanGenerated={() => {}}
             onNavigateToTrainers={() => setActiveTab('trainers')}
+            onNavigateToLiveHub={() => setActiveTab('live-hub')}
+          />
+        )}
+
+        {activeTab === 'live-hub' && (
+          <LiveExerciseWeatherHub
+            onAddExerciseToPlan={(exerciseName) => {
+              showNotification(`"${exerciseName}" added to daily routine!`);
+            }}
           />
         )}
 

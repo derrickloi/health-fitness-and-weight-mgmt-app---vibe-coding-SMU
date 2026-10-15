@@ -1,5 +1,5 @@
 import React from 'react';
-import { Camera, Calendar, UserCheck, Activity, ArrowRight, ShieldCheck, Zap } from 'lucide-react';
+import { Camera, Calendar, UserCheck, Activity, ArrowRight, ShieldCheck, Zap, CloudSun } from 'lucide-react';
 
 interface HeroProps {
   onNavigate: (tabId: string) => void;
@@ -15,7 +15,9 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
           <span aria-hidden="true" className="text-slate-300">·</span>
           <span>Health365 & ActiveSG Compatible</span>
           <span aria-hidden="true" className="text-slate-300">·</span>
-          <span>Designed for Regional Hawker & Home Diets</span>
+          <span>data.gov.sg 2-Hr Forecast</span>
+          <span aria-hidden="true" className="text-slate-300">·</span>
+          <span>wger Exercise Library</span>
         </div>
 
         {/* Hero 2-Column Split */}
@@ -26,7 +28,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
               Personalized ASEAN Health, Fitness & Weight Management
             </h1>
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
-              Achieve sustainable weight goals without giving up your favorite hawker food. Snap meal photos for instant ASEAN calorie breakdown, sync Apple Watch & InBody biometrics, and book certified regional dietitians and fitness coaches.
+              Achieve sustainable weight goals without giving up your favorite hawker food. Snap meal photos for instant ASEAN calorie breakdown, sync Apple Watch & InBody biometrics, track real-time weather & PM2.5 air advisories, and explore wger strength movements.
             </p>
 
             {/* Quick Action Buttons */}
@@ -45,6 +47,14 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
               >
                 <Calendar className="w-4 h-4" />
                 <span>Generate Weight Plan</span>
+              </button>
+
+              <button
+                onClick={() => onNavigate('live-hub')}
+                className="px-4 py-3 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 font-semibold text-sm flex items-center gap-2 transition-colors min-h-[44px]"
+              >
+                <CloudSun className="w-4 h-4 text-blue-600" />
+                <span>Live Weather & wger</span>
               </button>
 
               <button

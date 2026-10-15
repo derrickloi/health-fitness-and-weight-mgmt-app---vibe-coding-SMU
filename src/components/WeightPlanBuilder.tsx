@@ -5,11 +5,13 @@ import { WeightPlan } from '../types';
 interface WeightPlanBuilderProps {
   onPlanGenerated: (plan: WeightPlan) => void;
   onNavigateToTrainers: () => void;
+  onNavigateToLiveHub?: () => void;
 }
 
 export const WeightPlanBuilder: React.FC<WeightPlanBuilderProps> = ({
   onPlanGenerated,
-  onNavigateToTrainers
+  onNavigateToTrainers,
+  onNavigateToLiveHub
 }) => {
   const [currentWeight, setCurrentWeight] = useState<number>(76.5);
   const [targetWeight, setTargetWeight] = useState<number>(68.0);
@@ -355,7 +357,25 @@ export const WeightPlanBuilder: React.FC<WeightPlanBuilderProps> = ({
 
             {/* Tab 1: Weekly Workout Regimen */}
             {activeTab === 'schedule' && (
-              <div className="space-y-3">
+              <div className="space-y-4">
+                {/* Live environmental check banner */}
+                <div className="p-3.5 rounded-xl bg-blue-50/80 border border-blue-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+                  <div className="text-xs text-blue-950">
+                    <span className="font-bold block">Live 2-Hr Singapore Weather & wger Movement Sync:</span>
+                    <span className="text-blue-800 text-[11px]">
+                      Before training outdoors, check real-time rain forecasts across 47 planning areas and browse 20 wger exercises.
+                    </span>
+                  </div>
+                  {onNavigateToLiveHub && (
+                    <button
+                      onClick={onNavigateToLiveHub}
+                      className="px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs whitespace-nowrap shadow-xs transition-colors shrink-0"
+                    >
+                      View Live Hub
+                    </button>
+                  )}
+                </div>
+
                 <div className="divide-y divide-slate-100">
                   {weeklySchedule.map((item, idx) => (
                     <div key={idx} className="py-3 flex items-start justify-between gap-4">

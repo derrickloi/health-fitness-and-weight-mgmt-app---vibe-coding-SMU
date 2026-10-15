@@ -19,12 +19,13 @@ export const Navbar: React.FC<NavbarProps> = ({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { id: 'tracker', label: 'AI Calorie & Meal Scanner' },
-    { id: 'weight-plan', label: 'Weight Management Plan' },
+    { id: 'tracker', label: 'AI Meal Scanner' },
+    { id: 'weight-plan', label: 'Weight Plan' },
+    { id: 'live-hub', label: 'Live Weather & wger' },
     { id: 'trainers', label: 'Trainers & Dietitians' },
-    { id: 'devices', label: 'Device & InBody Sync' },
+    { id: 'devices', label: 'Device & InBody' },
     { id: 'rewards', label: 'Rewards & Events' },
-    { id: 'pricing', label: 'Plans & Pricing' }
+    { id: 'pricing', label: 'Pricing' }
   ];
 
   return (
@@ -52,9 +53,9 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
           </div>
 
-          {/* Zone 2: 4-5 concise single-line text navigation links */}
-          <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-600">
-            {navItems.slice(0, 5).map((item) => (
+          {/* Zone 2: 5-6 concise single-line text navigation links */}
+          <nav className="hidden lg:flex items-center gap-5 text-xs font-semibold text-slate-600">
+            {navItems.slice(0, 6).map((item) => (
               <button
                 key={item.id}
                 onClick={() => setActiveTab(item.id)}

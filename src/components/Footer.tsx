@@ -48,6 +48,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBmcModal, onNavigate }) =>
                 </button>
               </li>
               <li>
+                <button onClick={() => onNavigate('live-hub')} className="hover:text-slate-900 transition-colors">
+                  Live Weather & wger Exercises
+                </button>
+              </li>
+              <li>
                 <button onClick={() => onNavigate('trainers')} className="hover:text-slate-900 transition-colors">
                   Trainers & Dietitians
                 </button>

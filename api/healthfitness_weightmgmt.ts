@@ -130,7 +130,15 @@ export async function fetchWgerExercises(): Promise<{ totalCount?: number; items
     const rawResults = Array.isArray(json.results) ? json.results : [];
 
     const items: ExerciseItem[] = rawResults.map((ex: any) => {
-      const cleanDesc = (ex.description || '')
+      // In wger API, English name & description are inside translations (language === 2)
+      const translation = Array.isArray(ex.translations)
+        ? (ex.translations.find((t: any) => t.language === 2) || ex.translations[0])
+        : null;
+
+      const rawName = translation?.name || ex.name || `Exercise #${ex.id}`;
+      const rawDesc = translation?.description || ex.description || '';
+
+      const cleanDesc = rawDesc
         .replace(/<[^>]*>/g, ' ')
         .replace(/\s+/g, ' ')
         .trim();
@@ -159,9 +167,9 @@ export async function fetchWgerExercises(): Promise<{ totalCount?: number; items
       return {
         id: ex.id,
         uuid: ex.uuid,
-        name: ex.name || 'Unnamed Exercise',
+        name: rawName,
         category: ex.category?.name || 'General Strength',
-        description: cleanDesc.slice(0, 240) + (cleanDesc.length > 240 ? '...' : ''),
+        description: cleanDesc.slice(0, 300) + (cleanDesc.length > 300 ? '...' : ''),
         muscles,
         equipment,
         images
@@ -226,7 +234,7 @@ export async function fetchSingaporeWeather(): Promise<WeatherAirData> {
     return {
       updateTimestamp: items?.update_timestamp || new Date().toISOString(),
       validPeriod: items?.valid_period || undefined,
-      forecasts: forecasts.slice(0, 16),
+      forecasts: forecasts,
       summaryCondition: hasRain ? 'Scattered Rain / Showers' : hasHazy ? 'Hazy' : 'Fair / Clear',
       outdoorWorkoutAdvisory: {
         status,

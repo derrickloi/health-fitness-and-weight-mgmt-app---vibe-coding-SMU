@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Watch, Scale, Shield, Activity, RefreshCw, Flame, CheckCircle, Droplet, Heart, Check, Plus, AlertCircle } from 'lucide-react';
 import { ConnectedDevice, BiometricSummary } from '../types';
 import { CONNECTED_DEVICES, INITIAL_BIOMETRICS } from '../data/mockData';
+import { LiveServerlessFeed } from './LiveServerlessFeed';
 
 interface DeviceSyncHubProps {
   onStreakBoost: () => void;
@@ -295,6 +296,9 @@ export const DeviceSyncHub: React.FC<DeviceSyncHubProps> = ({ onStreakBoost }) =
           ))}
         </div>
       </div>
+
+      {/* Real-time serverless API stream */}
+      <LiveServerlessFeed />
     </div>
   );
 };
